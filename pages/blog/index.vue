@@ -4,18 +4,23 @@
     <p v-else-if="$fetchState.error">
       Error while fetching posts: {{ $fetchState.error.message }}
     </p>
-    <v-list v-else>
-      <v-subheader>Blog Posts</v-subheader>
-      <v-list-item
-        v-for="post of posts"
-        :key="post.id"
-        :to="{ name: 'blog-id', params: { id: post.id } }"
-      >
-        <v-list-item-title>
-          {{ post.title }}
-        </v-list-item-title>
-      </v-list-item>
-    </v-list>
+    <v-card v-else>
+      <v-card-title class="headline">
+        Blog Posts
+      </v-card-title>
+      <v-divider />
+      <v-list>
+        <v-list-item
+          v-for="post of posts"
+          :key="post.id"
+          :to="{ name: 'blog-id', params: { id: post.id } }"
+        >
+          <v-list-item-title class="text-capitalize">
+            {{ post.title }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-card>
   </div>
 </template>
 

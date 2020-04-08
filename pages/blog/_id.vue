@@ -2,15 +2,16 @@
   <div v-if="$fetchState.pending">Fetching post #{{ $route.params.id }}...</div>
   <div v-else-if="$fetchState.error">{{ $fetchState.error.message }}...</div>
   <v-card v-else>
-    <v-card-title class="headline">
+    <v-card-title class="text-capitalize headline">
       {{ post.title }}
     </v-card-title>
+    <v-divider />
     <v-card-text>
       {{ post.body }}
     </v-card-text>
     <v-card-actions>
       <v-spacer />
-      <v-btn class="text-lowercase" :to="{ name: 'blog' }" text exact>
+      <v-btn class="text-lowercase" :to="{ name: 'blog' }" text exact small>
         back to blog posts
       </v-btn>
     </v-card-actions>

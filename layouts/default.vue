@@ -1,13 +1,13 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-app-bar fixed app>
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-toolbar-items>
-        <v-btn :to="{ name: 'index' }" exact>
+        <v-btn :to="{ name: 'index' }" exact text>
           HOME
         </v-btn>
-        <v-btn :to="{ name: 'blog' }" exact>
+        <v-btn :to="{ name: 'blog' }" exact text>
           BLOG
         </v-btn>
       </v-toolbar-items>
