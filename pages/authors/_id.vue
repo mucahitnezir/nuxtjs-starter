@@ -15,21 +15,22 @@
 </template>
 
 <script>
-import PostListCard from '../../components/PostListCard'
+import PostListCard from '~/components/PostListCard.vue'
 
 export default {
   components: { PostListCard },
   async fetch() {
-    this.author = await this.$axios.$get(`/users/${this.$route.params.id}`)
-    this.posts = await this.$axios.$get(
-      `/posts?userId=${this.$route.params.id}`
-    )
+    const { id: authorId } = this.$route.params
+    await this.$store.dispatch('author/fetchAuthor', authorId)
+    this.posts = await this.$axios.$get(`/users/${authorId}/posts`)
   },
   data: () => ({
-    author: null,
     posts: []
   }),
   computed: {
+    author() {
+      return this.$store.state.author.author
+    },
     title() {
       return this.author === null || this.$fetchState.pending
         ? 'Loading..'

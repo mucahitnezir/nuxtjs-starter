@@ -1,5 +1,5 @@
 <template>
-  <p v-if="loading">Fetching authors...</p>
+  <p v-if="$fetchState.pending">Fetching authors...</p>
   <v-card v-else>
     <v-card-title class="headline">
       Authors
@@ -20,15 +20,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
+  async fetch() {
+    await this.$store.dispatch('author/fetchAuthors')
+  },
   data: () => ({
-    loading: false,
-    authors: []
+    loading: false
   }),
-  async created() {
-    this.loading = true
-    this.authors = await this.$axios.$get('/users')
-    this.loading = false
+  computed: {
+    ...mapState('author', ['authors'])
   },
   head() {
     return {
