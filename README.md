@@ -1,4 +1,4 @@
-# nuxtjs-now-tutorial
+# Awesome Nuxt.js Project
 
 > My top-notch Nuxt.js project
 
