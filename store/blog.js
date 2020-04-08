@@ -13,7 +13,10 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchPosts({ commit }) {
+  fetchPosts({ commit, state }) {
+    if (state.posts.length > 0) {
+      return state.posts
+    }
     return this.$axios.$get('/posts').then((posts) => {
       commit('SET_POSTS', posts)
       return posts

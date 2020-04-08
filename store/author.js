@@ -13,7 +13,10 @@ export const mutations = {
 }
 
 export const actions = {
-  fetchAuthors({ commit }) {
+  fetchAuthors({ commit, state }) {
+    if (state.authors.length > 0) {
+      return state.authors
+    }
     return this.$axios.$get('/users').then((authors) => {
       commit('SET_AUTHORS', authors)
       return authors
