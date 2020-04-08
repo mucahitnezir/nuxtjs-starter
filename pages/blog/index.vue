@@ -9,17 +9,17 @@
 </template>
 
 <script>
-import PostListCard from '../../components/PostListCard'
+import { mapState } from 'vuex'
+
+import PostListCard from '~/components/PostListCard.vue'
 
 export default {
   components: { PostListCard },
   async fetch() {
-    this.posts = await this.$axios.$get('/posts')
+    await this.$store.dispatch('blog/fetchPosts')
   },
-  data() {
-    return {
-      posts: []
-    }
+  computed: {
+    ...mapState('blog', ['posts'])
   },
   head() {
     return {

@@ -35,16 +35,17 @@
 <script>
 export default {
   async fetch() {
-    this.post = await this.$axios.$get(`/posts/${this.$route.params.id}`)
-    this.comments = await this.$axios.$get(
-      `/posts/${this.$route.params.id}/comments`
-    )
+    const { id: postId } = this.$route.params
+    await this.$store.dispatch('blog/fetchPost', postId)
+    this.comments = await this.$axios.$get(`/posts/${postId}/comments`)
   },
   data: () => ({
-    post: null,
     comments: []
   }),
   computed: {
+    post() {
+      return this.$store.state.blog.post
+    },
     title() {
       return this.post === null || this.$fetchState.pending
         ? 'Loading..'
