@@ -29,5 +29,8 @@ export default {
       },
       themeCache
     }
+  },
+  icons: {
+    iconfont: 'mdiSvg'
   }
 }
