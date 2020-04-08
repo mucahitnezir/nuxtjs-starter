@@ -4,8 +4,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + 'Nuxt.js Tutorial',
-    title: 'Nuxt.js Tutorial' || '',
+    titleTemplate: '%s - ' + 'Awesome Nuxt.js',
+    title: 'Awesome Nuxt.js',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

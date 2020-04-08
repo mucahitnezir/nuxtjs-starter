@@ -30,7 +30,7 @@
 export default {
   data() {
     return {
-      title: 'Vuetify.js',
+      title: 'Awesome Nuxt.js',
       menuItems: [
         {
           text: 'Home',
