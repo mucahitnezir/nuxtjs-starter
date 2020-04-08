@@ -1,4 +1,10 @@
+import LRU from 'lru-cache'
 import colors from 'vuetify/es5/util/colors'
+
+const themeCache = new LRU({
+  max: 10,
+  maxAge: 1000 * 60 * 60 // 1 hour
+})
 
 export default {
   customVariables: ['~/assets/variables.scss'],
@@ -14,6 +20,14 @@ export default {
         error: colors.deepOrange.accent4,
         success: colors.green.accent3
       }
+    },
+    options: {
+      minifyTheme(css) {
+        return process.env.NODE_ENV === 'production'
+          ? css.replace(/[\r\n|\r|\n]/g, '')
+          : css
+      },
+      themeCache
     }
   }
 }
