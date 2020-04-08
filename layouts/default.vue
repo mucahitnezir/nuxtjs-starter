@@ -7,6 +7,9 @@
         <v-btn :to="{ name: 'index' }" exact text>
           HOME
         </v-btn>
+        <v-btn :to="{ name: 'authors' }" exact text>
+          AUTHORS
+        </v-btn>
         <v-btn :to="{ name: 'blog' }" exact text>
           BLOG
         </v-btn>
