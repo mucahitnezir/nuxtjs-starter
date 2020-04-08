@@ -26,7 +26,9 @@
       <v-spacer />
       <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
         <v-icon>
-          {{ $vuetify.theme.dark ? 'mdi-brightness-4' : 'mdi-brightness-7' }}
+          {{
+            $vuetify.theme.dark ? icons.mdiBrightness4 : icons.mdiBrightness7
+          }}
         </v-icon>
       </v-btn>
       <v-toolbar-items class="hidden-sm-and-down ml-2">
@@ -59,11 +61,14 @@
 </template>
 
 <script>
+import { mdiBrightness4, mdiBrightness7 } from '@mdi/js'
+
 export default {
   data() {
     return {
       drawer: false,
       title: 'Awesome Nuxt.js',
+      icons: { mdiBrightness4, mdiBrightness7 },
       menuItems: [
         {
           text: 'Home',
