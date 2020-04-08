@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + 'Nuxt.js Template',
+    titleTemplate: '%s - ' + 'Nuxt.js Tutorial',
     title: 'Nuxt.js Tutorial' || '',
     meta: [
       { charset: 'utf-8' },
@@ -12,7 +12,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'Nuxt.js tutorial demo project.'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
