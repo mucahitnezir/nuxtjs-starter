@@ -37,7 +37,10 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/vuetify'
+    // Doc: https://github.com/nuxt-community/vuetify-module
+    '@nuxtjs/vuetify',
+    // Doc: https://github.com/nuxt-community/gtm-module
+    '@nuxtjs/gtm'
   ],
   /*
    ** Nuxt.js modules
@@ -65,6 +68,14 @@ export default {
     defaultAssets: {
       icons: false
     }
+  },
+  /*
+   ** gtm module configuration
+   ** https://github.com/nuxt-community/gtm-module
+   */
+  gtm: {
+    dev: false,
+    id: 'GTM-5X5W29P'
   },
   /*
    ** Build configuration
