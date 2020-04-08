@@ -4,14 +4,14 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-toolbar-items>
-        <v-btn :to="{ name: 'index' }" exact text>
-          HOME
-        </v-btn>
-        <v-btn :to="{ name: 'authors' }" exact text>
-          AUTHORS
-        </v-btn>
-        <v-btn :to="{ name: 'blog' }" exact text>
-          BLOG
+        <v-btn
+          v-for="(item, index) in menuItems"
+          :key="index"
+          :to="item.to"
+          exact
+          text
+        >
+          {{ item.text }}
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -20,7 +20,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app>
+    <v-footer app fixed>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -30,8 +30,21 @@
 export default {
   data() {
     return {
-      fixed: true,
-      title: 'Vuetify.js'
+      title: 'Vuetify.js',
+      menuItems: [
+        {
+          text: 'Home',
+          to: '/'
+        },
+        {
+          text: 'Authors',
+          to: '/authors'
+        },
+        {
+          text: 'Blog',
+          to: '/blog'
+        }
+      ]
     }
   }
 }
