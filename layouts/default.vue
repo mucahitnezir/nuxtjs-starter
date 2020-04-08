@@ -24,7 +24,12 @@
     <v-app-bar fixed app>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
+        <v-icon>
+          {{ $vuetify.theme.dark ? 'mdi-brightness-4' : 'mdi-brightness-7' }}
+        </v-icon>
+      </v-btn>
+      <v-toolbar-items class="hidden-sm-and-down ml-2">
         <v-btn
           v-for="(item, index) in menuItems"
           :key="index"
