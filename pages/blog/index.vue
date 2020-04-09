@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <p v-if="$fetchState.pending">Fetching posts...</p>
-    <p v-else-if="$fetchState.error">
-      Error while fetching posts: {{ $fetchState.error.message }}
-    </p>
-    <PostListCard v-else :posts="posts" />
-  </div>
+  <v-skeleton-loader
+    v-if="!$fetchState.error"
+    :loading="$fetchState.pending"
+    type="card-heading,list-item@100"
+  >
+    <PostListCard :posts="posts" />
+  </v-skeleton-loader>
+  <p v-else>Error while fetching posts: {{ $fetchState.error.message }}</p>
 </template>
 
 <script>
