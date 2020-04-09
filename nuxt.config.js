@@ -4,11 +4,15 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     titleTemplate: '%s - ' + 'Awesome Nuxt.js',
     title: 'Awesome Nuxt.js',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'theme-color', name: 'theme-color', content: '#1976d2' },
       {
         hid: 'description',
         name: 'description',
@@ -78,6 +82,15 @@ export default {
   gtm: {
     dev: false,
     id: 'GTM-5X5W29P'
+  },
+  /*
+   ** webfontloader module configuration
+   ** https://github.com/Developmint/nuxt-webfontloader#setup
+   */
+  webfontloader: {
+    google: {
+      families: ['Roboto:100,300,400,500,700,900&display=swap']
+    }
   },
   /*
    ** Build configuration
