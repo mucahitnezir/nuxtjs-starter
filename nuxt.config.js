@@ -49,7 +49,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/Developmint/nuxt-webfontloader
+    'nuxt-webfontloader'
   ],
   /*
    ** Axios module configuration
