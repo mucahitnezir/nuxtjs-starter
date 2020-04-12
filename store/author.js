@@ -26,6 +26,7 @@ export const actions = {
     const author = getters.getAuthorById(authorId)
     if (author) {
       commit('SET_AUTHOR', author)
+      return author
     } else {
       return this.$axios.$get(`/users/${authorId}`).then((author) => {
         commit('SET_AUTHOR', author)

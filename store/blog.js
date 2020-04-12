@@ -26,6 +26,7 @@ export const actions = {
     const post = getters.getPostById(postId)
     if (post) {
       commit('SET_POST', post)
+      return post
     } else {
       return this.$axios.$get(`/posts/${postId}`).then((post) => {
         commit('SET_POST', post)
