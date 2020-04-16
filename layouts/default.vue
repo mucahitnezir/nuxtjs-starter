@@ -59,9 +59,19 @@
     <!--Footer-->
     <v-footer app fixed>
       <v-container class="py-0">
-        <v-layout>
+        <v-layout wrap>
+          <v-col cols="2" class="py-0 pl-0 d-flex align-center">
+            <v-btn
+              icon
+              class="mb-0"
+              href="https://github.com/mucahitnezir/awesome-nuxtjs"
+              target="_blank"
+            >
+              <v-icon>{{ icons.mdiGithub }}</v-icon>
+            </v-btn>
+          </v-col>
           <v-spacer />
-          <v-col cols="12" md="3" class="pa-0">
+          <v-col cols="8" md="3" class="py-0 pr-0">
             <v-select
               :items="locales"
               :label="localeLabel"
@@ -80,14 +90,14 @@
 </template>
 
 <script>
-import { mdiBrightness4, mdiBrightness7 } from '@mdi/js'
+import { mdiBrightness4, mdiBrightness7, mdiGithub } from '@mdi/js'
 
 export default {
   data() {
     return {
       drawer: false,
       title: 'Awesome Nuxt.js',
-      icons: { mdiBrightness4, mdiBrightness7 }
+      icons: { mdiBrightness4, mdiBrightness7, mdiGithub }
     }
   },
   computed: {
