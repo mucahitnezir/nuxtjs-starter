@@ -1,3 +1,5 @@
+const { GTM_CONTAINER_ID, SENTRY_DSN } = process.env
+
 export default {
   mode: 'universal',
   /*
@@ -54,7 +56,9 @@ export default {
     // Doc: https://github.com/Developmint/nuxt-webfontloader
     'nuxt-webfontloader',
     // Doc: https://nuxt-community.github.io/nuxt-i18n
-    'nuxt-i18n'
+    'nuxt-i18n',
+    // Doc: https://github.com/nuxt-community/sentry-module#setup
+    '@nuxtjs/sentry'
   ],
   /*
    ** Axios module configuration
@@ -80,7 +84,7 @@ export default {
    */
   gtm: {
     dev: false,
-    id: 'GTM-5X5W29P'
+    id: GTM_CONTAINER_ID
   },
   /*
    ** webfontloader module configuration
@@ -106,6 +110,14 @@ export default {
     detectBrowserLanguage: {
       fallbackLocale: 'en'
     }
+  },
+  /*
+   ** sentry module configuration
+   ** https://github.com/nuxt-community/sentry-module#setup
+   */
+  sentry: {
+    dsn: SENTRY_DSN,
+    config: {}
   },
   /*
    ** Build configuration
