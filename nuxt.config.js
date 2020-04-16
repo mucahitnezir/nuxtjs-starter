@@ -4,9 +4,6 @@ export default {
    ** Headers of the page
    */
   head: {
-    htmlAttrs: {
-      lang: 'en'
-    },
     titleTemplate: '%s - ' + 'Awesome Nuxt.js',
     title: 'Awesome Nuxt.js',
     meta: [
@@ -55,7 +52,9 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/Developmint/nuxt-webfontloader
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    // Doc: https://nuxt-community.github.io/nuxt-i18n
+    'nuxt-i18n'
   ],
   /*
    ** Axios module configuration
@@ -90,6 +89,22 @@ export default {
   webfontloader: {
     google: {
       families: ['Roboto:100,300,400,500,700,900&display=swap']
+    }
+  },
+  /*
+   ** i18n module configuration
+   ** https://nuxt-community.github.io/nuxt-i18n/options-reference.html
+   */
+  i18n: {
+    locales: [
+      { code: 'en', file: 'en-US.js', name: 'English' },
+      { code: 'tr', file: 'tr-TR.js', name: 'Turkish' }
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'locales/',
+    detectBrowserLanguage: {
+      fallbackLocale: 'en'
     }
   },
   /*

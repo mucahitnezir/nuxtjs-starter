@@ -10,9 +10,9 @@
       </v-card-title>
     </v-card>
 
-    <PostListCard :posts="posts" />
+    <PostListCard :posts="posts" :title="$t('author.posts')" />
   </v-skeleton-loader>
-  <p v-else>{{ $fetchState.error.message }}...</p>
+  <p v-else>{{ $fetchState.error.message }}</p>
 </template>
 
 <script>
@@ -34,7 +34,7 @@ export default {
     },
     title() {
       return this.author === null || this.$fetchState.pending
-        ? 'Loading..'
+        ? this.$t('loading')
         : this.author.name
     }
   },

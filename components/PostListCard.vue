@@ -8,7 +8,7 @@
       <v-list-item
         v-for="post of posts"
         :key="post.id"
-        :to="{ name: 'blog-id', params: { id: post.id } }"
+        :to="localePath({ name: 'blog-id', params: { id: post.id } })"
       >
         <v-list-item-title class="text-capitalize">
           {{ post.title }}
@@ -28,7 +28,7 @@ export default {
     },
     title: {
       type: String,
-      default: 'Posts'
+      required: true
     }
   }
 }

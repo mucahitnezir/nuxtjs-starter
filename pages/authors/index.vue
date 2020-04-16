@@ -6,14 +6,14 @@
   >
     <v-card>
       <v-card-title class="headline">
-        Authors
+        {{ $t('author.authors') }}
       </v-card-title>
       <v-divider />
       <v-list>
         <v-list-item
           v-for="author of authors"
           :key="author.id"
-          :to="{ name: 'authors-id', params: { id: author.id } }"
+          :to="localePath({ name: 'authors-id', params: { id: author.id } })"
         >
           <v-list-item-title class="text-capitalize">
             {{ author.name }}
@@ -40,7 +40,7 @@ export default {
   },
   head() {
     return {
-      title: 'Authors'
+      title: this.$t('author.authors')
     }
   }
 }

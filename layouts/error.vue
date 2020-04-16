@@ -7,8 +7,9 @@
       {{ otherError }}
     </h1>
     <NuxtLink to="/">
-      Home page
+      {{ $t('menuItems.home') }}
     </NuxtLink>
+    {{ error }}
   </v-app>
 </template>
 

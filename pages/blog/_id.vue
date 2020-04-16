@@ -14,15 +14,21 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer />
-        <v-btn class="text-lowercase" :to="{ name: 'blog' }" text exact small>
-          back to blog posts
+        <v-btn
+          class="text-lowercase"
+          :to="localePath({ name: 'blog' })"
+          text
+          exact
+          small
+        >
+          {{ $t('blog.backToList') }}
         </v-btn>
       </v-card-actions>
     </v-card>
 
     <v-card>
       <v-list>
-        <v-subheader>Comments</v-subheader>
+        <v-subheader>{{ $t('blog.comments') }}</v-subheader>
         <v-list-item v-for="comment in comments" :key="comment.id">
           <v-list-item-content>
             <v-list-item-title>{{ comment.name }}</v-list-item-title>
@@ -32,7 +38,7 @@
       </v-list>
     </v-card>
   </v-skeleton-loader>
-  <p v-else>{{ $fetchState.error.message }}...</p>
+  <p v-else>{{ $fetchState.error.message }}</p>
 </template>
 
 <script>
@@ -51,7 +57,7 @@ export default {
     },
     title() {
       return this.post === null || this.$fetchState.pending
-        ? 'Loading..'
+        ? this.$t('loading')
         : this.post.title
     }
   },
