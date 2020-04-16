@@ -22,7 +22,11 @@
 
     <!--App Bar-->
     <v-app-bar fixed app>
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title>
+        <NuxtLink to="/" tag="span" style="cursor: pointer;">
+          {{ title }}
+        </NuxtLink>
+      </v-toolbar-title>
       <v-spacer />
       <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
         <v-icon>
@@ -31,7 +35,7 @@
           }}
         </v-icon>
       </v-btn>
-      <v-toolbar-items class="hidden-sm-and-down ml-2">
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
           v-for="(item, index) in menuItems"
           :key="index"
@@ -98,10 +102,6 @@ export default {
     },
     menuItems() {
       return [
-        {
-          text: this.$t('menuItems.home'),
-          to: this.localePath('/')
-        },
         {
           text: this.$t('menuItems.authors'),
           to: this.localePath('/authors')
