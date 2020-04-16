@@ -23,7 +23,7 @@
     <!--App Bar-->
     <v-app-bar fixed app>
       <v-toolbar-title>
-        <NuxtLink to="/" tag="span" style="cursor: pointer;">
+        <NuxtLink :to="localePath('/')" tag="span" style="cursor: pointer;">
           {{ title }}
         </NuxtLink>
       </v-toolbar-title>
