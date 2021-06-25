@@ -31,7 +31,7 @@
       <v-btn icon @click="$vuetify.theme.dark = !$vuetify.theme.dark">
         <v-icon>
           {{
-            $vuetify.theme.dark ? icons.mdiBrightness4 : icons.mdiBrightness7
+            $vuetify.theme.dark ? icons.mdiWeatherNight : icons.mdiWhiteBalanceSunny
           }}
         </v-icon>
       </v-btn>
@@ -64,7 +64,7 @@
             <v-btn
               icon
               class="mb-0"
-              href="https://github.com/mucahitnezir/awesome-nuxtjs"
+              href="https://github.com/mucahitnezir/nuxtjs-starter"
               target="_blank"
             >
               <v-icon>{{ icons.mdiGithub }}</v-icon>
@@ -90,14 +90,14 @@
 </template>
 
 <script>
-import { mdiBrightness4, mdiBrightness7, mdiGithub } from '@mdi/js'
+import { mdiWeatherNight, mdiWhiteBalanceSunny, mdiGithub } from '@mdi/js'
 
 export default {
   data() {
     return {
       drawer: false,
       title: 'Awesome Nuxt.js',
-      icons: { mdiBrightness4, mdiBrightness7, mdiGithub }
+      icons: { mdiWeatherNight, mdiWhiteBalanceSunny, mdiGithub }
     }
   },
   computed: {
