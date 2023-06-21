@@ -16,7 +16,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/gtm": "^2.2.3",
     "@nuxtjs/sentry": "^4.0.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "nuxt-i18n": "^6.9.1",
     "nuxt-webfontloader": "^1.1.0"
   },
